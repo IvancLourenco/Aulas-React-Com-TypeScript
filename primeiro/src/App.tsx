@@ -3,19 +3,21 @@ export default function App(){
       <div>
         <h1>Meu primeiro Projeto</h1>
 
-        <Aluno nome="Kamila"/>
+        <Aluno nome="Kamila" idade={35}/>
         
-        <Aluno nome="Ivan"/>
+        <Aluno nome="Ivan" idade={26}/>
       </div>
     )
 }
 
 interface AlunoProps{
   nome: string;
+  idade: number;
 }
 
-function Aluno({nome}: AlunoProps){
+function Aluno({nome, idade}: AlunoProps){
   return (
-    <h1>Aluno:{nome}</h1>
+    <><h1>Aluno:{nome}</h1>
+    <h3>Idade:{idade}</h3></>
   )
 }
