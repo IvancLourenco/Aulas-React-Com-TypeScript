@@ -1,0 +1,11 @@
+interface AlunoProps{
+    nome: string;
+    idade: number;
+  }
+  
+ export function Aluno({nome, idade}: AlunoProps){
+    return (
+      <><h1>Aluno:{nome}</h1>
+      <h3>Idade:{idade}</h3></>
+    )
+  }
