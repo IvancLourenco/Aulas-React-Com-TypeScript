@@ -5,3 +5,4 @@ Este projeto foi desenvolvido para calcular o valor da gasolina em comparação 
 ## Tecnologias Utilizadas
 
 - TypeScript
+- React
