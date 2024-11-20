@@ -1,7 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 
 function App() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const firstRender = useRef(true);
+
   const[input,setInput] = useState("");
   const[tasks, setTasks] = useState<string[]>([])
 
@@ -19,6 +22,17 @@ useEffect(() => {
   
 },[])
 
+useEffect(() => {
+  if(firstRender.current) {
+    firstRender.current= false;
+    return;
+  }
+
+  localStorage.setItem("@cursoreact", JSON.stringify(tasks))
+  console.log("UseEffect foi chamado")
+
+},[tasks]);
+
 function handleRegister(){
   if(!input){
     alert("Digite algo")
@@ -32,7 +46,7 @@ function handleRegister(){
 
   setTasks(tarefas => [...tarefas, input])
   setInput("")
-  localStorage.setItem("@cursoreact", JSON.stringify([...tasks,input]))
+ 
 }
 function handleSaveEdit(){
   const findIndexTask = tasks.findIndex(task => task === editTask.task)
@@ -45,16 +59,18 @@ function handleSaveEdit(){
     task: ''
   })
   setInput("")
-  localStorage.setItem("@cursoreact", JSON.stringify(allTasks))
+ 
 }
 
 function handleDelete(item:string){
   const removeTask = tasks.filter(task => task !== item)
   setTasks(removeTask)
-  localStorage.setItem("@cursoreact", JSON.stringify(removeTask))
+  
 }
 
 function handleEdit(item:string){
+  inputRef.current?.focus()
+
   setInput(item)
   setEditTask({
     enabled: true,
@@ -68,7 +84,9 @@ function handleEdit(item:string){
     <input
     placeholder='Digite uma tarefa'
     value={input}
-    onChange={(e) => setInput(e.target.value)} />
+    onChange={(e) => setInput(e.target.value)}
+    ref={inputRef}
+    />
 
     <button onClick={handleRegister}>{editTask.enabled ? "Atualizar tarefa" : "Adicionar tarefa"}</button>
 
