@@ -40,6 +40,7 @@
     padding: 8px 16px;
     color: #fff;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .textoFrase{
@@ -53,4 +54,5 @@
     color: #dd7b22;
     font-style: italic;
     font-size: 18px;
+    
 }
