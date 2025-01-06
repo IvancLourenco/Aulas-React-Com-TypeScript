@@ -1,20 +1,25 @@
-import{ useState } from "react";
+//import{ useState } from "react";
 import './App.css'
+import logoImg from "./assets/logo.png"
 
 function App() {
-  const [ signed, setSigned ] = useState(false)
+  
 
   return (
    
-      <div>
-        <button onClick={() => setSigned (true )}>Entrar</button>
-        {signed && (
-          <div>
-            <h1>Bem vindo  Usuario</h1>
-            <p>Usuario online</p>
-            <button onClick={()=> setSigned(false)}>Sair</button>
-          </div>
-        )}
+      <div className="container">
+        <img src={logoImg} alt="logo frases" className= "logo" />
+
+        <h2 className="title">Categorias</h2>
+        <section className="category-area">
+          <button className="category-button">Motivação</button>
+          <button className="category-button">Bem estar</button>
+        </section>
+
+        <button className="button-frase">Gerar frase</button>
+
+        <p className="textoFrase">Alguma frase vai vir aqui</p>
+        
       </div> 
      
     
