@@ -1,0 +1,25 @@
+.container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+}
+
+h1{
+  font-size: 42px;
+  color: #FFFF;
+  margin: 20px ;
+}
+.sessao-input{
+  align-items: center;
+  background-color: #ffff;
+  width: 350px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+  padding: 25px 0 15px 0;
+}
