@@ -5,7 +5,9 @@ export function Sobre(){
         <div>
             <h1>Pagina Sobre</h1>
 
-            <Link to='/'>home</Link>
+            <Link to='/'>home</Link><br />
+            <Link to="/contato">Sobre</Link>
+            
         </div>
     )
 
