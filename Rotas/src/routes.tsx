@@ -6,26 +6,33 @@ import {Contato} from './pages/contato'
 import {Produto} from './pages/produto'
 import {Notfound} from './pages/notfound'
 
+import{Layout} from "./components/layout"
+
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <Home />,
-    },
-    {
-        path: "/sobre",
-        element: <Sobre />,
-    },
-    {
-        path: "/contato",
-        element: <Contato />,
-    },
-    {
-        path: "/produto/:id",
-        element: <Produto />,
-    },
-    {
-        path: "*",
-        element:<Notfound/>,
+        element: <Layout/>,
+        children:[
+            {
+                path: "/",
+                element: <Home />,
+            },
+            {
+                path: "/sobre",
+                element: <Sobre />,
+            },
+            {
+                path: "/contato",
+                element: <Contato />,
+            },
+            {
+                path: "/produto/:id",
+                element: <Produto />,
+            },
+            {
+                path: "*",
+                element:<Notfound/>,
+            }
+        ]
     }
 ])
 
