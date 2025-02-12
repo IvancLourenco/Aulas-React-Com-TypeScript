@@ -48,7 +48,7 @@ export function Home(){
               2B
             </td>
 
-            <td className={styles.tdlabel} data-Label= "Mudança 24 horas">
+            <td className={styles.tdLoss} data-Label= "Mudança 24 horas">
                <span>1.20</span>
             </td>
 
