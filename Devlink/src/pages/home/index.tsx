@@ -2,8 +2,8 @@
 
 export function Home(){
     return (
-        <div>
-            <h1>pagina home</h1>
+        <div className="w-full h-screen bg-neutral-900">
+            <h1 className="text-white text-3xl">pagina home</h1>
         </div>
     )
 }
